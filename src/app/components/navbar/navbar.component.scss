@@ -1,0 +1,37 @@
+@import "./../../../styles.scss";
+
+
+.bg-dark {
+    background: linear-gradient(to right, $color-dark-blue, $color-light-blue);
+    height: 7vh;
+    &.navbar-dark{
+        .navbar-nav .active>.nav-link {
+            color:$color-white;
+        }
+    }
+    
+}
+
+nav {
+    font-size: 1.2rem;
+    ul {
+        li {
+            a.nav-link {
+                color: $color-white;
+                text-decoration: none;
+                &:hover {
+                    color: $color-white;
+                    text-decoration: underline;    
+                }   
+                &:visited {
+                    color:$color-white;
+                    text-decoration: none;
+                }
+                &:active {
+                    color: $color-white;
+                }        
+            }//end:anchor links
+        }//end:li
+    }//end:ul    
+}//end:app-navbar
+

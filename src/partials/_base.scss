@@ -1,0 +1,21 @@
+// Pramod, Suchand
+// All Base CSS definitions go here
+
+body {
+    background-color: $color-grey;
+    font-size: 20px;
+}
+
+
+.container {
+    // border:1px solid red;
+    background-color: $color-white;
+    height: 89vh;
+    @include box-shadow-generator;
+}
+
+@media (max-width:540px){
+    body {        
+        font-size: 15px;
+    }
+}

@@ -1,0 +1,16 @@
+// Pramod, Suchand
+// All font declarations are defined here
+
+@font-face {
+    font-family: 'Centrale-Sans';
+    src: url("/assets/fonts/centrale-sans/2E3D5C_1_0.woff");
+}
+
+body {
+    // color: red;
+    font-family: "Centrale-Sans";
+}
+
+h1 {
+    font-size: 2rem;
+}

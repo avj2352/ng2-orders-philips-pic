@@ -1,0 +1,17 @@
+
+ .maintable {
+    border-spacing: 5px;
+    border-collapse: separate;
+  }
+.aligning{
+
+}
+#wrapper {
+    padding:10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  

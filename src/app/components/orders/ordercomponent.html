@@ -1,0 +1,187 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+
+<!-- Navigation -->
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+    <div class="container">
+            <a class="navbar-brand pull-left" href="#" style="margin-bottom: 0">Patient Form</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">New Order
+                        <span class="sr-only">(current)</span>
+                      </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">View Order</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav> -->
+
+<div class="container ">
+
+    <h1>New Order</h1>
+    <div class="card text-dark">
+
+        <div class="card-body">
+
+            <div class="maincontainer">
+
+                    <div class="row">
+                       
+                            <div class="col-sm-3"  style="padding-left: 20px;">
+                                   <b><label>Patient Name: </label></b>
+                                    <label>John Doe</label>
+                            </div>
+                            <div class="col-sm-3">
+                                    <b> <label>ID:</label></b>
+                                    <label>978673</label>
+                            </div>
+                            <div class="col-sm-3">
+                                    <b><label >Entered By:</label > </b>
+                                    <label >Martin Samuels</label >
+                            </div>
+                            <div class="col-sm-3">
+                                    <b><label >Pregnency Alert: </label > </b>
+                                      <input type="checkbox" value="" checked>
+            
+                        
+                        </div>
+                    </div>
+          
+            <div class="row">
+                <div class="col-sm-6">
+
+                    <table class="maintable">
+
+                        <tbody>
+                            <tr>
+
+                                <td><label>Priority:</label > </td>
+             <td>
+                    <select id="priority" class="form-control" >
+                            <option value="" selected disabled hidden>Select Priority</option>
+                            <option value="high">High</option>
+                            <option value="low">Low</option>
+                        </select>
+             </td>
+          </tr>
+      <tr>
+          
+    </tr>
+    <tr>
+        <td><label>Current Patient Location:</label > </td>
+                
+          <td>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter address"></textarea>
+          </td>
+      </tr>
+      <tr>
+            <td><label >Current Patient Travel Status :</label > </td>
+             <td>
+                    <select class="form-control" >
+                            <option value="" selected disabled hidden>Select</option>
+                            <option value="high">High</option>
+                            <option value="low">Low</option>
+                        </select>
+             </td>
+          </tr>
+      <tr>
+      <tr>
+        <td><label >Requester: </label > </td>
+        <td>
+                <div class="input-group custom-search-form">
+                        <input type="text" class="form-control" placeholder="Martin Samuels...">
+                        <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </span>
+                    </div>
+        </td>
+      </tr>
+      <tr>
+            <td><label >Referer: </label > </td>
+            <td>
+                    <form [formGroup]='stateForm' autocomplete="new-password" novalidate>
+                    <div (clickOutside)="closeDropDown()" for="search" class="input-group custom-search-form">
+                            <input type="text" class="form-control" placeholder="Martin Samuels..." formControlName='search' (click)='openDropDown()'  type='text'>
+                            <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </span>
+                        </div>
+                    </form>
+                        <div class="float-left" >
+                                <div *ngIf='showDropDown' class='search-drop-down' style="position:absolute;height:100px;width:150px;border:solid 0.5px black;overflow:scroll;overflow-x:hidden;overflow-y:scroll;background-color: white;">
+                                    <div (click)='selectValue(s)' class='search-results ' *ngFor="let s of states | searchFilter: getSearchValue()">
+                                        <a [innerHTML]="s | letterBold: getSearchValue()">
+                                               {{s}}
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                
+            </td>
+          </tr>
+        
+    </tbody>
+    
+  </table>
+</div>
+  <div class="col-sm-6">
+        <table class="maintable">        
+        <tr>
+                <td><label >Select Procedure: </label > </td>
+                <td>
+                       
+                        <div class="input-group custom-search-form">
+                                <input type="text" class="form-control" placeholder="Search Procedure...">
+                                <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                            </div>
+                    
+                </td>
+                <td><button type="button" (click)="pushValueToList()" class="btn btn-default">Add</button></td>
+              </tr>
+        </table>
+        <table class="table table-striped table-bordered">
+                <tr>
+                        <th>Procedure Name</th>
+                        <th>Indication</th>
+                </tr>
+                <tr *ngFor="let procedure of procedures">
+                 
+                    <td>{{procedure.procedure}}</td>
+                    <td>{{procedure.indication}}</td>
+                   
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div    >
+       
+    </div>
+    <div class="text-center"> 
+            <button type="button" class="btn">Create Order</button>
+            <button type="button" class="btn">Cancel</button>
+        </div>        
+
+    
+
+
+  </div>
+ 
+
